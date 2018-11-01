@@ -3,7 +3,7 @@
  @tailwind preflight;
 
  .btn-primary {
-     @apply .bg-coral .text-white .font-semibold .py-3 .px-4 .rounded;
+     @apply .bg-coral .text-white .font-semibold .py-3 .px-4 .rounded .no-underline;
 
      &:hover {
         @apply .cursor-pointer;
