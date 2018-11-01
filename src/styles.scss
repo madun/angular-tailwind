@@ -1,1 +1,113 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/scss/modules/menu";
+
+ @tailwind preflight;
+
+ .btn-primary {
+     @apply .bg-coral .text-white .font-semibold .py-3 .px-4 .rounded;
+
+     &:hover {
+        @apply .cursor-pointer;
+        box-shadow: inset 0 -2px 0 rgba(31,45,61,.15);
+     }
+ }
+
+ .btn-flat {
+    @apply .text-silver .py-3 .px-4 .rounded .no-underline .transition;
+
+    &:hover {
+       @apply .cursor-pointer .bg-grey-lighter;
+    }
+ }
+
+ .btn-flat-bold {
+    @apply .text-grey-darker .font-semibold .py-3 .px-4 .rounded .no-underline .transition;
+
+    &:hover {
+       @apply .cursor-pointer .bg-grey-lighter;
+    }
+ }
+
+ .btn-secondary {
+     @apply .py-3 .px-4  .text-white .transition .cursor-pointer .rounded .no-underline .bg-blue .font-semibold;
+     &:hover {
+        //  @apply .bg-grey;
+         box-shadow: inset 0 -2px 0 #2779bd;
+         transition: .5s;
+     }
+ }
+
+ .btn-outline {
+     @apply .btn-flat .border .font-semibold;
+
+     &:hover {
+        @apply .border-grey-lighter;
+     }
+ }
+
+ .btn-outline-danger {
+     @apply .btn-flat .border .font-semibold .w-full;
+
+     &:hover {
+        @apply .bg-red;
+        color: #fff !important;
+     }
+ }
+ 
+ @tailwind utilities;
+ 
+ body {
+     color: #3c4858;
+ }
+
+ .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  
+    @media (min-width: 576px) {
+        // .container {
+        max-width: 540px;
+        // }
+    }
+    
+    @media (min-width: 768px) {
+        // .container {
+        max-width: 720px;
+        // }
+    }
+    
+    @media (min-width: 992px) {
+        // .container {
+        max-width: 960px;
+        // }
+    }
+    
+    @media (min-width: 1200px) {
+        // .container {
+        max-width: 1140px;
+        // }
+    }
+    
+  }
+  
+  .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+ 
+.algolia-autocomplete {
+    width: 100%!important;
+}
+
+.max-w-screen-xl {
+    max-width: 1280px;
+}
+
+.transition {
+    transition: all .1s ease-in;
+}

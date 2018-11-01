@@ -1,20 +1,89 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header class="bg-white border-b border-grey-lighter">
+  <div class="container mx-auto">
+    <div class="flex py-3">
+      <div class="w-3/5 flex items-center">
+        <img src="https://sharinghappiness.org/assets/img/logo.png" class="w-28 mr-4" alt="">
+        <div class="relative w-full">
+          <input class="transition focus:outline-none border border-transparent text-grey-darker focus:bg-white focus:border-grey-light placeholder-grey-darkest rounded bg-grey-lighter py-2 pr-4 pl-10 block w-full appearance-none leading-normal" autocomplete="off" type="text" name="search" id="" placeholder="Search the campaign">
+          <div class="pointer-events-none absolute pin-y pin-l pl-3 flex items-center">
+            <svg class="fill-current pointer-events-none text-grey-dark w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
+          </div>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-end">
+        <ul class="menu list-reset flex items-center">
+          <li class="items-center">
+            <a class="items-center mr-3 btn-primary">
+              Galang Dana
+            </a>
+          </li>
+          <li>
+            <a class="items-center mr-3 btn-flat" href="#">
+              Campaign
+            </a>
+          </li>
+          <li>
+            <a class="items-center mr-3 btn-flat" href="#">
+              Zakat
+            </a>
+            <!-- <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="#">Penghasilan</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Emas & Perak</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Perdagangan</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Tabungan</a>
+              </li>
+            </ul> -->
+          </li>
+          <li>
+            <a class="items-center btn-flat-bold" (click)="toggleMenu()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="4" r="2"></circle><circle cx="12" cy="20" r="2"></circle></svg>
+            </a>
+            <!-- <ul class="sub-menu hidden" > -->
+            <ul *ngIf="!hideMenu" class="sub-menu">
+              <!-- if not signin -->
+              <li class="menu-item">
+                <a href="#">Masuk</a>
+              </li>
+              <li class="menu-item border-b border-grey-light pb-3">
+                <a href="#">Daftar</a>
+              </li>
+              <!-- /if not signin -->
+              <!-- has login -->
+              <li class="menu-item border-b border-grey-light pb-3">
+                <a href="#">Ilman Manarul Qori</a>
+                <a href="#">
+                    <small class="text-grey-dark">ilmankori@gmail.com</small>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Fidyah</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Infak</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Wakaf</a>
+              </li>
+              <!-- has login -->
+              <a href="#" class="font-semibold text-white no-underline">
+                <li class="py-3 flex justify-center bg-grey-dark -mx-4 -mb-4 rounded rounded-t-none">
+                  Keluar
+                </li>
+              </a>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
+<div class="container">
+</div>

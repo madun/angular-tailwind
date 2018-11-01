@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  // title = 'app';
+  public hideMenu:boolean = true;
+
+  toggleMenu(){
+    this.hideMenu = !this.hideMenu
+  }
 }
