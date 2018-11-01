@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  
-  // title = 'app';
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   public hideMenu:boolean = true;
 
   toggleMenu(){
