@@ -52,6 +52,14 @@
         color: #fff !important;
      }
  }
+
+ .btn-icon-circle {
+     @apply .absolute .pin-t .pin-r .mr-4 .mt-4 .bg-white .rounded .rounded-full .text-red-lighter;
+     width: 30px;
+     height: 30px;
+     line-height: 30px;
+     text-align: center;
+ }
  
  @tailwind utilities;
  

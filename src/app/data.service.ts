@@ -10,4 +10,8 @@ export class DataService {
     return this.http.get('https://devel.sharinghappiness.org/api/v1/program')
   }
 
+  getCampaignDetail(slug){
+    return this.http.get('https://devel.sharinghappiness.org/api/v1/program/'+slug)
+  }
+
 }

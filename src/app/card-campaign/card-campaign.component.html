@@ -1,12 +1,21 @@
 <div class="flex flex-wrap mb-4">
-    <div class="w-1/3" *ngFor="let campaign of campaigns$">
+    <div class="w-1/3" *ngFor="let campaign of campaigns$.result">
       <div class="bg-white shadow rounded m-4">
-        <div class="">
+        <div class="relative">
+          <a routerLink="#" class="btn-icon-circle">
+            <!-- <i class="far fa-heart"></i> -->
+            <i class="fas fa-heart text-pink"></i>
+          </a>
           <img class="rounded rounded-b-none" src="https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/10/p-1-five-ways-charity-water-uses-storytelling-to-inspire-donors.jpg" alt="" srcset="">
+          <div class="btn-markmap absolute pin-b pin-l ml-4 mb-4 text-white">
+            <i class="fas fa-map-marker mr-2"></i> Bandung, Jawa Barat
+          </div>
         </div>
         <a routerLink="/{{campaign.slug}}" class="no-underline">
-          <div class="px-4 py-3 border-b border-grey-lighter">
-              <span class="font-semibold text-grey-darkest">{{campaign.title}}</span>
+          <div class="px-4 py-3 border-b border-grey-lighter h-32">
+              <div class="h-10">
+                <span class="font-semibold text-grey-darkest leading-normal">{{campaign.title}}</span>
+              </div>
               <p class="text-sm pt-3 text-grey-darker leading-normal text-justify">
                   {{campaign.highlight}}
               </p>
@@ -23,12 +32,12 @@
             </div>
             <div class="text-right mt-1">
               <p class="text-xs text-grey-darkest font-bold mb-3 "><i class="far fa-clock mr-1"></i>2 Hari</p>
-              <p class="text-xs text-grey-darkest font-bold ">Rp. 94.000.000.000</p>
+              <p class="text-xs text-grey-darkest font-bold ">Rp. {{ campaign.collected }}</p>
             </div>
         </div>
 
         <div class="w-full bg-grey-lighter rounded rounded-t-none">
-            <div class="rounded rounded-tl-none bg-coral h-1" style="width: 75%"></div>
+            <div class="rounded rounded-tl-none bg-coral h-1" [style.width.%]="((campaign.collected/campaign.target) * 100 ).toFixed(0)"></div>
           </div>
       </div>
     </div>

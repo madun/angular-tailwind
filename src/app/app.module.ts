@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardCampaignComponent } from './card-campaign/card-campaign.component';
 import { DetailCampaignComponent } from './detail-campaign/detail-campaign.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DetailCampaignComponent } from './detail-campaign/detail-campaign.compo
     NavbarComponent,
     HomeComponent,
     CardCampaignComponent,
-    DetailCampaignComponent
+    DetailCampaignComponent,
+    LoaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

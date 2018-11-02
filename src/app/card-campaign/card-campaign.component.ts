@@ -15,7 +15,7 @@ export class CardCampaignComponent implements OnInit {
 
   ngOnInit() {
     this.data.getCampaign().subscribe(
-      data => this.campaigns$ = data.result
+      data => this.campaigns$ = data
     )
   }
 

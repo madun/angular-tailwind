@@ -36,7 +36,7 @@
             <ul *ngIf="!hideMenu" class="sub-menu">
               <!-- if not signin -->
               <li class="menu-item">
-                <a href="#">Masuk</a>
+                <a routerLink="login">Masuk</a>
               </li>
               <li class="menu-item border-b border-grey-light pb-3">
                 <a href="#">Daftar</a>
@@ -60,7 +60,7 @@
               </li>
               <!-- has login -->
               <a href="#" class="font-semibold text-white no-underline">
-                <li class="py-3 flex justify-center bg-grey-dark -mx-4 -mb-4 rounded rounded-t-none">
+                <li class="py-3 flex items-baseline justify-center bg-grey-dark -mx-4 rounded rounded-t-none">
                     <i class="fas fa-sign-out-alt mr-2"></i>Keluar
                 </li>
               </a>
