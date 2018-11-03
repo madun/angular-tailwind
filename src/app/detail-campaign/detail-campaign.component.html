@@ -3,13 +3,39 @@
     <div class="w-3/5 mr-8">
       <h2 class="mb-5">{{ campaign$.result.title }}</h2>
       <img class="" src="https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/10/p-1-five-ways-charity-water-uses-storytelling-to-inspire-donors.jpg" alt="">
-      <div class="my-8">
-        Campaigner
-      </div>
     </div>
-    <div class="w-2/5">
-      <div class="bg-white shadow rounded p-4">
-        fdsfs
+    <div class="w-2/5 relative">
+      <div class="bg-white shadow rounded p-4 fixed w-full">
+        
+          <div class="flex">
+          
+              <div class="relative mt-1">
+                <img class="block h-16 sm:h-16 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://lh3.googleusercontent.com/-pVwMovncu18/AAAAAAAAAAI/AAAAAAAAAMI/MSYgqpOjzD8/s640-il/photo.jpg" alt="">
+                <i class="fas fa-check-circle fa-lg text-green absolute pin-b pin-r mr-4 mb-1"></i>
+              </div>
+              <div class="text-center sm:text-left sm:flex-grow mt-4">
+                  <p class="text-normal font-semibold mb-1">{{ campaign$.result.user.name }}</p>
+                  <i class="fas fa-star fa-xs mr-1 text-yellow-dark"></i><span class="text-sm leading-tight text-grey-dark">{{ campaign$.result.user.profile.rate }}</span>
+              </div>
+    
+          </div>
+
+      </div>
+      <div class="absolute bg-white shadow rounded p-4 pin-b w-full mb-4">
+        
+          <div class="flex">
+          
+              <div class="relative mt-1">
+                <img class="block h-16 sm:h-16 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://lh3.googleusercontent.com/-pVwMovncu18/AAAAAAAAAAI/AAAAAAAAAMI/MSYgqpOjzD8/s640-il/photo.jpg" alt="">
+                <i class="fas fa-check-circle fa-lg text-green absolute pin-b pin-r mr-4 mb-1"></i>
+              </div>
+              <div class="text-center sm:text-left sm:flex-grow mt-4">
+                  <p class="text-normal font-semibold mb-1">{{ campaign$.result.user.name }}</p>
+                  <i class="fas fa-star fa-xs mr-1 text-yellow-dark"></i><span class="text-sm leading-tight text-grey-dark">{{ campaign$.result.user.profile.rate }}</span>
+              </div>
+    
+          </div>
+
       </div>
     </div>
   </div>
