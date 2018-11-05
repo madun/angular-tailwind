@@ -7,7 +7,7 @@
     <!-- right -->
     <div class="w-2/5 relative">
 
-      <div class="bg-white shadow rounded p-4 fixed w-115">
+      <div class="bg-white rounded p-4 fixed w-115 border border-grey-lighter">
           <div class="flex">
               <div class="relative mb-6">
                 <img class="block h-24 sm:h-12 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://lh3.googleusercontent.com/-pVwMovncu18/AAAAAAAAAAI/AAAAAAAAAMI/MSYgqpOjzD8/s640-il/photo.jpg" alt="">
@@ -30,7 +30,7 @@
             <small class="text-xs">terkumpul dari <span class="font-bold">{{ campaign$.target }}</span></small>
           </div>
           <div class="w-full bg-grey-lighter rounded mb-2">
-            <div class="rounded bg-coral h-1" [style.width.%]="((campaign$.collected/campaign$.target) * 100 ).toFixed(0)"></div>
+            <div class="rounded bg-coral h-2" [style.width.%]="((campaign$.collected/campaign$.target) * 100 ).toFixed(0)"></div>
           </div>
           <div class="flex justify-between mb-4">
             <small class="text-xs font-bold">{{ ((campaign$.collected/campaign$.target) * 100 ).toFixed(0) }}%</small>
