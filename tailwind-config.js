@@ -76,6 +76,7 @@ let colors = {
   'orange-lightest': '#fff5eb',
 
   'coral': 'coral',
+  'coral-dark': '#e2764e',
 
   'yellow-darkest': '#453411',
   'yellow-darker': '#684f1d',
@@ -493,6 +494,7 @@ module.exports = {
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
+    '115': '27rem',
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
@@ -539,8 +541,10 @@ module.exports = {
     '16': '4rem',
     '24': '6rem',
     '32': '8rem',
+    '34': '9rem',
     '48': '12rem',
     '64': '16rem',
+    '128': '32rem',
     'full': '100%',
     'screen': '100vh'
   },

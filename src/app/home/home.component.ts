@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { Event, Router, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  // showLoading:boolean = true;
+  constructor() {
 
-  constructor() { }
+
+  }
 
   ngOnInit() {
   }

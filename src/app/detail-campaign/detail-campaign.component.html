@@ -1,50 +1,58 @@
 <div class="container mt-16">
   <div class="flex">
     <div class="w-3/5 mr-8">
-      <h2 class="mb-5">{{ campaign$.result.title }}</h2>
+      <h2 class="mb-5">{{ campaign$.title }}</h2>
       <img class="" src="https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/10/p-1-five-ways-charity-water-uses-storytelling-to-inspire-donors.jpg" alt="">
     </div>
+    <!-- right -->
     <div class="w-2/5 relative">
-      <div class="bg-white shadow rounded p-4 fixed w-full">
-        
+
+      <div class="bg-white shadow rounded p-4 fixed w-115">
           <div class="flex">
-          
-              <div class="relative mt-1">
-                <img class="block h-16 sm:h-16 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://lh3.googleusercontent.com/-pVwMovncu18/AAAAAAAAAAI/AAAAAAAAAMI/MSYgqpOjzD8/s640-il/photo.jpg" alt="">
-                <i class="fas fa-check-circle fa-lg text-green absolute pin-b pin-r mr-4 mb-1"></i>
+              <div class="relative mb-6">
+                <img class="block h-24 sm:h-12 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://lh3.googleusercontent.com/-pVwMovncu18/AAAAAAAAAAI/AAAAAAAAAMI/MSYgqpOjzD8/s640-il/photo.jpg" alt="">
+                <i class="fas fa-check-circle fa-sm text-green absolute pin-b pin-r mr-4 mb-1"></i>
               </div>
-              <div class="text-center sm:text-left sm:flex-grow mt-4">
-                  <p class="text-normal font-semibold mb-1">{{ campaign$.result.user.name }}</p>
-                  <i class="fas fa-star fa-xs mr-1 text-yellow-dark"></i><span class="text-sm leading-tight text-grey-dark">{{ campaign$.result.user.profile.rate }}</span>
+              <div class="text-center sm:text-left sm:flex-grow mt-1">
+                  <p class="text-sm font-semibold mb-1">{{ campaign$.user?.name }}</p>
+                  <i class="fas fa-star fa-xs mr-1 text-yellow-dark"></i><span class="text-xs leading-tight text-grey-dark">{{ campaign$.user?.profile?.rate }}</span>
               </div>
-    
+
+              <div class="text-right mt-1">
+                <p class="text-xs text-grey font-bold mb-3 ">Lokasi</p>
+                <i class="text-xs text-grey fas fa-map-marker mr-1"></i> {{ (campaign$.city != null) ? (campaign$.city?.name) : 'No Place' }}
+              </div>
+          </div>
+          <div class="mb-4">
+             <span class="text-xl font-bold ">Rp. {{ campaign$.collected }}</span>
+          </div>
+          <div class="mb-2">
+            <small class="text-xs">terkumpul dari <span class="font-bold">{{ campaign$.target }}</span></small>
+          </div>
+          <div class="w-full bg-grey-lighter rounded mb-2">
+            <div class="rounded bg-coral h-1" [style.width.%]="((campaign$.collected/campaign$.target) * 100 ).toFixed(0)"></div>
+          </div>
+          <div class="flex justify-between mb-4">
+            <small class="text-xs font-bold">{{ ((campaign$.collected/campaign$.target) * 100 ).toFixed(0) }}%</small>
+            <small class="text-xs font-bold"><i class="far fa-clock mr-1"></i>2 Hari</small>
           </div>
 
-      </div>
-      <div class="absolute bg-white shadow rounded p-4 pin-b w-full mb-4">
-        
-          <div class="flex">
-          
-              <div class="relative mt-1">
-                <img class="block h-16 sm:h-16 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://lh3.googleusercontent.com/-pVwMovncu18/AAAAAAAAAAI/AAAAAAAAAMI/MSYgqpOjzD8/s640-il/photo.jpg" alt="">
-                <i class="fas fa-check-circle fa-lg text-green absolute pin-b pin-r mr-4 mb-1"></i>
-              </div>
-              <div class="text-center sm:text-left sm:flex-grow mt-4">
-                  <p class="text-normal font-semibold mb-1">{{ campaign$.result.user.name }}</p>
-                  <i class="fas fa-star fa-xs mr-1 text-yellow-dark"></i><span class="text-sm leading-tight text-grey-dark">{{ campaign$.result.user.profile.rate }}</span>
-              </div>
-    
+          <div class="">
+            <button class="btn-donasi">Donasi Sekarang</button>
           </div>
-
+  
       </div>
+
     </div>
+    <!-- /right -->
   </div>
 </div>
 
 <div class="bg-white border-t">
   <div class="container">
     <div class="w-3/5 mr-3 py-6">
-      <div [innerHTML]="campaign$.result.description" class="whitespace-pre-wrap text-justify"></div>
+      <!-- <div [innerHTML]="" class="whitespace-pre-wrap text-justify"></div> -->
+      {{ campaign$.description }}
     </div>
   </div>
 </div>
