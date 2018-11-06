@@ -12,6 +12,7 @@ import { CardCampaignComponent } from './card-campaign/card-campaign.component';
 import { DetailCampaignComponent } from './detail-campaign/detail-campaign.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoginComponent } from './login/login.component';
+import { CampaignComponent } from './campaign/campaign.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './login/login.component';
     CardCampaignComponent,
     DetailCampaignComponent,
     LoaderComponent,
-    LoginComponent
+    LoginComponent,
+    CampaignComponent
   ],
   imports: [
     BrowserModule,

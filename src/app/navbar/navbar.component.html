@@ -2,7 +2,9 @@
   <div class="container mx-auto">
     <div class="flex py-3">
       <div class="w-3/5 flex items-center">
-        <img src="https://sharinghappiness.org/assets/img/logo.png" class="w-28 mr-4" alt="">
+        <a routerLink="">
+          <img src="https://sharinghappiness.org/assets/img/logo.png" class="w-28 mr-4" alt="">
+        </a>
         <div class="relative w-full ml-4">
           <input class="transition focus:outline-none border border-transparent text-grey-darker focus:bg-white focus:border-grey-light placeholder-grey-darkest rounded bg-grey-lighter py-2 pr-4 pl-10 block w-full appearance-none leading-normal" autocomplete="off" type="text" name="search" id="" placeholder="Search the campaign">
           <div class="pointer-events-none absolute pin-y pin-l pl-3 flex items-center">
@@ -19,7 +21,7 @@
             </a>
           </li>
           <li>
-            <a routerLink="" class="items-center mr-6 btn-flat" routerLinkActive="">
+            <a routerLink="/campaign" class="items-center mr-6 btn-flat" routerLinkActive="">
               Campaign
             </a>
           </li>
