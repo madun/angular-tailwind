@@ -36,10 +36,10 @@
             </a>
 
             <ul *ngIf="hideMenu" class="sub-menu">
-              <li class="menu-item">
+              <li class="menu-item" *ngIf="!_authService.loggedIn()">
                 <a routerLink="/masuk">Masuk</a>
               </li>
-              <li class="menu-item border-b border-grey-light pb-3">
+              <li  *ngIf="!_authService.loggedIn()" class="menu-item border-b border-grey-light pb-3">
                 <a routerLink="/daftar">Daftar</a>
               </li>
               <!-- /if not signin -->
@@ -60,7 +60,7 @@
                 <a href="#">Wakaf</a>
               </li>
               <!-- has login -->
-              <a href="#" class="font-semibold text-white no-underline">
+              <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" class="cursor-pointer font-semibold text-white no-underline">
                 <li class="py-3 flex items-baseline justify-center bg-grey-dark -mx-4 rounded rounded-t-none transition hover:transition hover:bg-grey-darker">
                     <i class="fas fa-sign-out-alt mr-2"></i>Keluar
                 </li>

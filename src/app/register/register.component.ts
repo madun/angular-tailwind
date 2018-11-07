@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
             ) { }
 
   ngOnInit() {
+    console.log(!!localStorage.getItem('token'));
   }
 
   registerUser() {

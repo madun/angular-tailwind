@@ -28,8 +28,7 @@ export class LoginComponent implements OnInit {
           alert(res.message);
           this.isLoading = false;
           localStorage.setItem('token', res.result.token);
-          console.log(res.result.token);
-          console.log(res.result);
+          this.router.navigateByUrl('/user-profile');
         }else if(res.status==30){
           this.isLoading = false;
         }

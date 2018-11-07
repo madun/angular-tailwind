@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { CampaignComponent } from './campaign/campaign.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

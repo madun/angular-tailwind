@@ -6,6 +6,8 @@ import { CampaignComponent } from './campaign/campaign.component';
 import { DetailCampaignComponent } from './detail-campaign/detail-campaign.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -23,6 +25,11 @@ const routes: Routes = [
   {
     path: 'daftar',
     component: RegisterComponent
+  },
+  {
+    path: 'user-profile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: ':slug',
