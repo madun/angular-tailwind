@@ -109,6 +109,8 @@ let colors = {
   'blue-light': '#29B6F6',
   'blue-lighter': '#4FC3F7',
   'blue-lightest': '#81D4FA',
+  'blue-facebook': '#3b5999',
+  'blue-facebook-dark': '#2e4473',
 
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',

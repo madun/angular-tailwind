@@ -30,27 +30,26 @@
               Zakat
             </a>
           </li>
-          <li>
-            <a class="items-center btn-flat-bold" (click)="toggleMenu()">
+          <li (mouseenter)="toggleShow($event)" (mouseleave)="toggleHide($event)">
+            <a class="items-center btn-flat-bold">
                 <i class="fas fa-ellipsis-v text-grey-dark"></i>
             </a>
-            <!-- <ul class="sub-menu hidden" > -->
-            <ul *ngIf="!hideMenu" class="sub-menu">
-              <!-- if not signin -->
+
+            <ul *ngIf="hideMenu" class="sub-menu">
               <li class="menu-item">
-                <a routerLink="login">Masuk</a>
+                <a routerLink="/masuk">Masuk</a>
               </li>
               <li class="menu-item border-b border-grey-light pb-3">
-                <a href="#">Daftar</a>
+                <a routerLink="/daftar">Daftar</a>
               </li>
               <!-- /if not signin -->
               <!-- has login -->
-              <li class="menu-item border-b border-grey-light pb-3">
+              <!-- <li class="menu-item border-b border-grey-light pb-3">
                 <a href="#">Ilman Manarul Qori</a>
                 <a href="#">
                     <small class="text-grey-dark">ilmankori@gmail.com</small>
                 </a>
-              </li>
+              </li> -->
               <li class="menu-item">
                 <a href="#">Fidyah</a>
               </li>

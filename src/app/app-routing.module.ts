@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { CampaignComponent } from './campaign/campaign.component';
 import { DetailCampaignComponent } from './detail-campaign/detail-campaign.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -16,12 +17,16 @@ const routes: Routes = [
     component: CampaignComponent
   },
   {
-    path: ':slug',
-    component: DetailCampaignComponent
+    path: 'masuk',
+    component: LoginComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'daftar',
+    component: RegisterComponent
+  },
+  {
+    path: ':slug',
+    component: DetailCampaignComponent
   }
 ];
 

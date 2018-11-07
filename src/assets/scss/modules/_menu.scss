@@ -4,7 +4,7 @@
     
         @apply .absolute .list-reset .w-64 .border .px-4 .pt-4 .rounded .bg-white .shadow;
         margin-left: -12.8rem;
-        margin-top: 1.4rem;
+        margin-top: 1.3rem;
 
         .menu-item {
             @apply .mb-3;
@@ -23,28 +23,28 @@
             }
         }
     
-        // &:before {
-        //     content: "";
-        //     position: absolute;
-        //     display: block;
-        //     bottom: calc(100% + 1px);
-        //     right: 15px;
-        //     border: 5px solid rgba(0,0,0,0);
-        //     border-bottom-color: transparent;
-        //     margin-left: 0;
-        // }
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: calc(100% + 1px);
+            right: 15px;
+            border: 5px solid rgba(0,0,0,0);
+            border-bottom-color: transparent;
+            margin-left: 0;
+        }
     
-        // &:after {
-        //     content: "";
-        //     position: absolute;
-        //     display: block;
-        //     bottom: 100%;
-        //     right: 15px;
-        //     border: 5px solid rgba(0,0,0,0);
-        //     // border-bottom-color: #fff;
-        //     margin-left: 0;
-        //     width: 290px;
-        // }
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: 100%;
+            right: 15px;
+            border: 5px solid rgba(0,0,0,0);
+            border-bottom-color: transparent;
+            margin-left: 0;
+            width: 290px;
+        }
     }
 
     // li:hover > .sub-menu {

@@ -7,20 +7,20 @@ import { Event, Router, NavigationStart, NavigationEnd, NavigationError } from '
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  showLoading:boolean = true;
+//   showLoading:boolean = true;
   constructor(private router: Router) {
 
     router.events.subscribe( (event: Event) => {
 
         if (event instanceof NavigationStart) {
             // Show loading indicator
-            this.showLoading = true;
+            // this.showLoading = true;
             // console.log('start');
         }
 
         if (event instanceof NavigationEnd) {
             // Hide loading indicator
-            this.showLoading = false;
+            // this.showLoading = false;
             // console.log('end');
         }
 

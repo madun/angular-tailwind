@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+//services
+import { AuthService } from './auth.service';
 
 
 import { AppRoutingModule } from './/app-routing.module';
@@ -13,6 +17,8 @@ import { DetailCampaignComponent } from './detail-campaign/detail-campaign.compo
 import { LoaderComponent } from './loader/loader.component';
 import { LoginComponent } from './login/login.component';
 import { CampaignComponent } from './campaign/campaign.component';
+import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +29,17 @@ import { CampaignComponent } from './campaign/campaign.component';
     DetailCampaignComponent,
     LoaderComponent,
     LoginComponent,
-    CampaignComponent
+    CampaignComponent,
+    RegisterComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

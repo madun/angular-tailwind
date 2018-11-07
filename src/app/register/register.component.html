@@ -1,0 +1,54 @@
+<div class="bg-white pt-16 ">
+  <div class="flex">
+    <div class="w-2/5 bg-grey-light ml-32 bg-white">
+      <h1 class="mb-16 w-64 text-grey-darker">Hai, Ayo buat akun kamu!</h1>
+
+      <div class="form">
+        <div class="mb-6 w-115">
+          <div class="mb-4">
+            <label for="nama" class="">Nama Lengkap:</label>
+          </div>
+          <input [(ngModel)]="registerUserData.name" name="name" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="text" value="" placeholder="Nama lengkap" required>
+        </div>
+        <div class="mb-6 w-115">
+          <div class="mb-4">
+            <label for="email" class="">Email:</label>
+          </div>
+          <input [(ngModel)]="registerUserData.email" name="email" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="email" value="" placeholder="you@example.com" required>
+        </div>
+        <div class="mb-6 w-115">
+          <div class="mb-4">
+            <label for="phone_number" class="">No. Telepon:</label>
+          </div>
+          <input [(ngModel)]="registerUserData.phone_number" name="phone_number" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="text" value="" placeholder="Nomor telepon" required>
+        </div>
+        <div class="mb-8 w-115">
+          <div class="mb-4">
+            <label for="password" class="">Password:</label>
+          </div>
+          <input [(ngModel)]="registerUserData.password" name="password" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="password" value="" placeholder="Minimal 6 karakter" required>
+        </div>
+        <div class="mb-12 w-115">
+          <button
+          (click)="registerUser()"
+          [attr.disabled]="isLoading ? '' : null"
+          [ngClass]="{
+            'relative': true,
+            'btn-auth': true,
+            'disabled': isLoading
+          }">
+              <i class="fas fa-circle-notch fa-spin absolute" style="left:20px;" *ngIf="isLoading"></i>
+            Daftar
+          </button>
+        </div>
+
+        <div class="w-115">
+          <span>Sudah punya akun? <a routerLink="/masuk" class="text-coral">Login Sekarang</a></span>
+        </div>
+
+      </div>
+    </div>
+    <div class="w-3/5 bg-grey-dark h-screen" style="background:url('https://sharinghappiness.org/files/img-register.png');background-repeat: no-repeat;background-size: cover;">
+    </div>
+  </div>
+</div>

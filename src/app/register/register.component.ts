@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent implements OnInit {
-  
-  loginUserData = {}
+export class RegisterComponent implements OnInit {
+
+  registerUserData = {}
   isLoading:Boolean = false;
   btn = document.getElementById("btn-register");
   constructor(
@@ -20,17 +20,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginUser() {
+  registerUser() {
     this.isLoading = true;
-    this._auth.loginUser(this.loginUserData).subscribe(
+    this._auth.registerUser(this.registerUserData).subscribe(
       res => {
         if(res.status==20){
           alert(res.message);
           this.isLoading = false;
-          localStorage.setItem('token', res.result.token);
-          console.log(res.result.token);
-          console.log(res.result);
+          this.router.navigateByUrl('/masuk');
         }else if(res.status==30){
+          console.log(res);
           this.isLoading = false;
         }
       },

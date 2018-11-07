@@ -1,3 +1,57 @@
-<p>
-  login works!
-</p>
+<div class="bg-white">
+  <div class="flex">
+    <div class="w-2/5 bg-grey-light mt-16 ml-32 bg-white">
+      <h1 class="mb-16 w-64 text-grey-darker">Good afternoon! Welcome back.</h1>
+
+      <form class="form">
+        <div class="mb-6 w-115">
+          <div class="mb-4">
+            <label for="email" class="">Email:</label>
+          </div>
+          <input [(ngModel)]="loginUserData.email" name="email" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="email" value="" placeholder="you@example.com" required>
+        </div>
+        <div class="mb-8 w-115">
+          <div class="mb-4">
+            <label for="password" class="">Password:</label>
+          </div>
+          <input [(ngModel)]="loginUserData.password" name="password" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="password" value="" placeholder="**********" required>
+        </div>
+        <div class="mb-8 w-115">
+            <button type="submit"
+            (click)="loginUser()"
+            [attr.disabled]="isLoading ? '' : null"
+            [ngClass]="{
+              'relative': true,
+              'btn-auth': true,
+              'disabled': isLoading
+            }">
+                <i class="fas fa-circle-notch fa-spin absolute" style="left:20px;" *ngIf="isLoading"></i>
+              Masuk
+            </button>
+        </div>
+        <div class="flex justify-center w-115 mb-8">
+          <span class="text-grey">Atau</span>
+        </div>
+        <div class="flex justify-center w-115 mb-16">
+          <button class="h-16 w-64 mr-4 bg-blue-facebook rounded font-bold text-white flex justify-center items-center hover:bg-blue-facebook-dark">
+            <i class="fab fa-facebook-f fa-lg mr-4"></i>
+            <span>Facebook</span>
+          </button>
+          <button class="h-16 w-64 border border-grey-light rounded bg-white font-bold text-grey-dark hover:bg-grey-lightest flex justify-center items-center">
+            <span class="mr-4">
+                <img width="26" src="https://s3-ap-southeast-1.amazonaws.com/assets-kitabisa-cc/images/icons/icon_small_google.svg" alt="">
+            </span>
+            <span>Google</span>
+          </button>
+        </div>
+
+        <div class="w-115">
+          <span>Belum punya akun? <a routerLink="/daftar" class="text-coral">Daftar Sekarang</a></span>
+        </div>
+
+      </form>
+    </div>
+    <div class="w-3/5 bg-grey-dark h-screen" style="background:url('https://sharinghappiness.org/files/img-register.png');background-repeat: no-repeat;background-size: cover;">
+    </div>
+  </div>
+</div>

@@ -12,10 +12,14 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  public hideMenu:boolean = true;
+  public hideMenu:boolean = false;
 
-  toggleMenu(){
-    this.hideMenu = !this.hideMenu
+  toggleHide(i){
+    this.hideMenu = false;
+  }
+
+  toggleShow(i){
+    this.hideMenu = true;
   }
 
 }
