@@ -20,6 +20,7 @@ import { CampaignComponent } from './campaign/campaign.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AuthGuard } from './auth.guard';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NotifierModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   
+  private readonly notifier: NotifierService;
   isLoading:Boolean = false;
   loginUserData = {}
   emailRegex: any = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
@@ -20,10 +22,19 @@ export class LoginComponent implements OnInit {
   })
   constructor(
         private _auth: AuthService,
-        private router: Router
-            ) { }
+        private router: Router,
+        notifierService: NotifierService
+            ) { 
+              this.notifier = notifierService;
+            }
 
   ngOnInit() {
+    let token = this._auth.getToken()
+    this._auth.getUserDetail(token).subscribe( res => {
+      if(res.status==20){
+        this.router.navigate(['/user-profile']);
+      }
+    })
   }
 
   loginUser() {
@@ -36,6 +47,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', res.result.token);
           localStorage.setItem('token_email', this.loginUserData.email);
           this.router.navigateByUrl('/user-profile');
+          this.notifier.notify( 'success', 'You are awesome! I mean it!' );
         }else if(res.status==30){
           console.log(res);
           this.isLoading = false;

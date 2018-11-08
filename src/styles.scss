@@ -1,3 +1,9 @@
+@import "../node_modules/angular-notifier/styles/core";
+@import "../node_modules/angular-notifier/styles/themes/theme-material";
+@import "../node_modules/angular-notifier/styles/types/type-success";
+@import "../node_modules/angular-notifier/styles/types/type-warning";
+@import "../node_modules/angular-notifier/styles/types/type-info";
+@import "../node_modules/angular-notifier/styles/types/type-error";
 @import "assets/scss/modules/menu";
 
  @tailwind preflight;

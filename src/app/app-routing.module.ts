@@ -10,31 +10,13 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'campaign',
-    component: CampaignComponent
-  },
-  {
-    path: 'masuk',
-    component: LoginComponent
-  },
-  {
-    path: 'daftar',
-    component: RegisterComponent
-  },
-  {
-    path: 'user-profile',
-    component: UserProfileComponent,
-    canActivate: [AuthGuard] // protected from if someone not login yet
-  },
-  {
-    path: ':slug',
-    component: DetailCampaignComponent
-  }
+  { path: '', component: HomeComponent },
+  { path: 'campaign', component: CampaignComponent },
+  { path: 'masuk', component: LoginComponent },
+  { path: 'daftar', component: RegisterComponent },
+  { path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuard] /* protected from if someone not login yet */},
+  { path: ':slug', component: DetailCampaignComponent }
+  // { path: '**', component: LoginComponent },
 ];
 
 @NgModule({

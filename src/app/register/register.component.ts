@@ -26,7 +26,12 @@ export class RegisterComponent implements OnInit {
             ) { }
 
   ngOnInit() {
-    // console.log(!!localStorage.getItem('token'));
+    let token = this._auth.getToken()
+    this._auth.getUserDetail(token).subscribe( res => {
+      if(res.status==20){
+        this.router.navigate(['/user-profile']);
+      }
+    })
   }
 
   registerUser() {
