@@ -3,28 +3,43 @@
     <div class="w-2/5 bg-grey-light mt-16 ml-32 bg-white">
       <h1 class="mb-16 w-64 text-grey-darker">Good afternoon! Welcome back.</h1>
 
-      <form class="form">
+      <form class="form" [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
         <div class="mb-6 w-115">
           <div class="mb-4">
             <label for="email" class="">Email:</label>
           </div>
-          <input [(ngModel)]="loginUserData.email" name="email" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="email" value="" placeholder="you@example.com" required>
+          <input 
+          formControlName="email" 
+          [ngClass]="{'border-red' : form.get('email').touched && form.get('email').invalid}" 
+          name="email" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="email" value="" placeholder="you@example.com" required>
+          <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback text-red">
+            <div *ngIf="form.get('email').errors.required" class="mt-1">Email haurs diisi</div>
+            <div *ngIf="form.get('email').errors.pattern" class="mt-1">Email Format salah</div>
+          </div>
         </div>
         <div class="mb-8 w-115">
-          <div class="mb-4">
+          <div class="mb-4 flex justify-between">
             <label for="password" class="">Password:</label>
+            <a class="text-coral font-semibold cursor-pointer">Lupa password?</a>
           </div>
-          <input [(ngModel)]="loginUserData.password" name="password" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="password" value="" placeholder="**********" required>
+          <input 
+          formControlName="password" 
+          [ngClass]="{'border-red' : form.get('password').touched && form.get('password').invalid}" 
+          name="password" class="bg-white appearance-none border border-grey-light rounded w-full py-4 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-coral" type="password" value="" placeholder="**********" required>
+          <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback text-red">
+            <div *ngIf="form.get('password').errors.required" class="mt-1">Password harus diisi</div>
+            <div *ngIf="form.get('password').errors.minlength" class="mt-1">Password kurang dari 6 karakter</div>
+          </div>
         </div>
         <div class="mb-8 w-115">
             <button type="submit"
-            (click)="loginUser()"
-            [attr.disabled]="isLoading ? '' : null"
             [ngClass]="{
               'relative': true,
               'btn-auth': true,
               'disabled': isLoading
-            }">
+            }"
+            class="focus:outline-none"
+            >
                 <i class="fas fa-circle-notch fa-spin absolute" style="left:20px;" *ngIf="isLoading"></i>
               Masuk
             </button>

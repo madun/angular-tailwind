@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -11,17 +12,25 @@ export class RegisterComponent implements OnInit {
 
   registerUserData = {}
   isLoading:Boolean = false;
-  btn = document.getElementById("btn-register");
+  emailRegex: any = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
+
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.pattern(this.emailRegex)]),
+    phone_number: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.maxLength(15)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+  })
   constructor(
         private _auth: AuthService,
         private router: Router
             ) { }
 
   ngOnInit() {
-    console.log(!!localStorage.getItem('token'));
+    // console.log(!!localStorage.getItem('token'));
   }
 
   registerUser() {
+    this.registerUserData = this.form.value
     this.isLoading = true;
     this._auth.registerUser(this.registerUserData).subscribe(
       res => {

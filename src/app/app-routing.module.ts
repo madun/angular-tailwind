@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'user-profile',
     component: UserProfileComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard] // protected from if someone not login yet
   },
   {
     path: ':slug',
